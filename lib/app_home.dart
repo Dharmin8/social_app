@@ -34,20 +34,22 @@ class _AppHomeState extends State<AppHome> with SingleTickerProviderStateMixin {
             ),
             new Tab(
               icon: Icon(Icons.search),
-            ),new Tab(
+            ),
+            new Tab(
               icon: Icon(Icons.favorite),
-            ),new Tab(
+            ),
+            new Tab(
               icon: Icon(Icons.check),
-            ),new Tab(
+            ),
+            new Tab(
               icon: Icon(Icons.person),
             ),
           ],
         ),
       ),
-
       drawer: new Drawer(
-				child: ListView(
-					children: <Widget>[
+        child: ListView(
+          children: <Widget>[
             new ListTile(
               title: new Text(
                 'Application Settings',
@@ -58,27 +60,21 @@ class _AppHomeState extends State<AppHome> with SingleTickerProviderStateMixin {
                 ),
               ),
             ),
-
-						new ListTile(
-							title: new Text('Theme'),
-						),
-
-						new ListTile(
-							title: new Text('Notifications'),
-						),
-
             new ListTile(
-							title: new Text('Contact Us'),
-						),
-
+              title: new Text('Theme'),
+            ),
             new ListTile(
-							title: new Text('Legal'),
-						),
-					],
-				),
-			),
-
-
+              title: new Text('Notifications'),
+            ),
+            new ListTile(
+              title: new Text('Contact Us'),
+            ),
+            new ListTile(
+              title: new Text('Legal'),
+            ),
+          ],
+        ),
+      ),
       backgroundColor: new Color(0xffffffff),
       body: new TabBarView(
         controller: _tabController,

@@ -6,7 +6,7 @@ class HomeModel {
   HomeModel({this.name, this.desc, this.avatarUrl});
 }
 
-List<HomeModel> homeData =[
+List<HomeModel> homeData = [
   new HomeModel(
     name: "Clean Up : Juhu Beach",
     desc: "Dec 11",
