@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:social_app/view_check.dart';
+import 'package:social_app/view_search.dart';
+import 'package:social_app/view_home.dart';
+import 'package:social_app/view_favorite.dart';
+import 'package:social_app/view_profile.dart';
 
 class AppHome extends StatefulWidget {
   @override
@@ -13,15 +18,31 @@ class _AppHomeState extends State<AppHome> with SingleTickerProviderStateMixin {
     _tabController = new TabController(length: 5, initialIndex: 0, vsync: this);
   }
 
-  int _currentIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
         centerTitle: true,
-        title: new Text("Social App"),
+        title: new Text("Welcome To *"),
         elevation: 0.7,
+        bottom: new TabBar(
+          controller: _tabController,
+          indicatorColor: Colors.white,
+          tabs: <Widget>[
+            new Tab(
+              icon: Icon(Icons.home),
+            ),
+            new Tab(
+              icon: Icon(Icons.search),
+            ),new Tab(
+              icon: Icon(Icons.favorite),
+            ),new Tab(
+              icon: Icon(Icons.check),
+            ),new Tab(
+              icon: Icon(Icons.person),
+            ),
+          ],
+        ),
       ),
 
       drawer: new Drawer(
@@ -62,41 +83,11 @@ class _AppHomeState extends State<AppHome> with SingleTickerProviderStateMixin {
       body: new TabBarView(
         controller: _tabController,
         children: <Widget>[
-        ],
-      ),
-      floatingActionButton: new FloatingActionButton.extended(
-        backgroundColor: Colors.cyan,
-        icon: Icon(Icons.add),
-        label: Text('Join'),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: new Text('Home'),
-            backgroundColor: Colors.blue,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            title: new Text('Search'),
-            backgroundColor: Colors.blue,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            title: new Text('Favorite'),
-            backgroundColor: Colors.blue,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.check),
-            title: new Text('Query'),
-            backgroundColor: Colors.blue,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            title: new Text('Profile'),
-            backgroundColor: Colors.blue,
-          ),
+          new Home(),
+          new Search(),
+          new Favorite(),
+          new Check(),
+          new Person(),
         ],
       ),
     );
