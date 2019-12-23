@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       title: "Social-App",
       theme: new ThemeData(
-        primaryColor: Colors.grey,
+        primaryColor: Colors.green,
         accentColor: new Color(0xffffffff),
       ),
       home: new AppHome(),
