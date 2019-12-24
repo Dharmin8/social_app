@@ -12,49 +12,89 @@ class AppHome extends StatefulWidget {
 
 class _AppHomeState extends State<AppHome> with SingleTickerProviderStateMixin {
 int _currentIndex = 0;
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
+void onTabTapped (int index){
+  setState(() {
+    _currentIndex= index;
+  });
+}
+ final List<Widget> children = [
+  new Home(),
+  new Search(),
+  new Favorite(),
+  new Check(),
+  new Person(),
 
+];
+
+
+  @override
+
+  Widget build(BuildContext context) {
+
+    return new Scaffold(
         appBar: new AppBar(
           centerTitle: true,
           title: new Text("Nature Drive"),
           elevation: 0.7,
-          bottom: PreferredSize(
+
+          bottom:
+          PreferredSize(
             preferredSize: Size(50, 150),
-            child: Container(),
+            child: Container(
+              alignment: Alignment.center,
+              child: RaisedButton(
+                  textColor: Colors.white,
+                  color: Colors.green,
+                  child: Text("Mumbai"),
+                  elevation: 0,
+                  onPressed: () {}),
+            ),
           ),
-//        new TabBar(
-//          controller: _tabController,
-//          indicatorColor: Colors.white,
-//          tabs: <Widget>[
-//            new Tab(
-//              icon: Icon(Icons.home),
-//            ),
-//            new Tab(
-//              icon: Icon(Icons.search),
-//            ),
-//            new Tab(
-//              icon: Icon(Icons.favorite),
-//            ),
-//            new Tab(
-//              icon: Icon(Icons.check),
-//            ),
-//            new Tab(
-//              icon: Icon(Icons.person),
-//            ),
-//          ],
-//        ),
+//
           actions: <Widget>[
             IconButton(
               onPressed: () {},
               icon: new Icon(Icons.notifications_none),
-
-
             )
           ],
         ),
+      body:
 
+      Scaffold(
+
+        bottomNavigationBar: BottomNavigationBar(
+
+          onTap: onTabTapped,
+          currentIndex: _currentIndex ,
+
+          type: BottomNavigationBarType.fixed,
+          iconSize: 25,
+
+          items: [
+            BottomNavigationBarItem(
+              icon: new Icon(Icons.home),
+              title: new Text("Home"),
+            ),
+            BottomNavigationBarItem(
+              icon: new Icon(Icons.search),
+              title: new Text("Search"),
+            ),
+            BottomNavigationBarItem(
+              icon: new Icon(Icons.favorite),
+              title: new Text("Marked"),
+            ),
+            BottomNavigationBarItem(
+              icon: new Icon(Icons.check),
+              title: new Text("Attended"),
+            ),
+            BottomNavigationBarItem(
+              icon: new Icon(Icons.person),
+              title: new Text("Profile"),
+            ),
+          ],
+
+        ),
+      ),
         drawer: new Drawer(
           child: ListView(
             children: <Widget>[
@@ -81,105 +121,7 @@ int _currentIndex = 0;
             ],
           ),
         ),
-
         backgroundColor: new Color(0xffffffff),
-        body: new Scaffold(
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _currentIndex ,
-    items:[
-    BottomNavigationBarItem
-    (
-    icon: new Icon( Icons.home),
-    title: new Text("Home"),
-
-    ),
-    BottomNavigationBarItem
-    (
-    icon: new Icon( Icons.search),
-    title: new Text("Search"),
-
-    ),
-    BottomNavigationBarItem
-    (
-    icon: new Icon( Icons.favorite),
-    title: new Text("Marked"),
-
-    ),
-    BottomNavigationBarItem
-    (
-    icon: new Icon( Icons.check),
-    title: new Text("Check"),
-
-    ),
-    BottomNavigationBarItem
-    (
-    icon: new Icon( Icons.person),
-    title: new Text("Profile"),
-
-    ),
-  ],
-          onTap: (index) {
-            setState(() {
-              _currentIndex = index;
-            });
-          }
-          ,
-    ),
-    )
-
-
-    );
-
+       );
   }
-
-  }
-
-//class MyBottomNavigationBar extends StatefulWidget {
-//  @override
-//  _MyBottomNavigationBarState createState() => _MyBottomNavigationBarState();
-//}
-//
-//class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
-//  @override
-//  Widget build(BuildContext context) {
-//    return new Scaffold(
-//      bottomNavigationBar: BottomNavigationBar(
-//          items:[
-//              BottomNavigationBarItem
-//                (
-//          icon: new Icon( Icons.home),
-//          title: new Text("Home"),
-//
-//      ),
-//            BottomNavigationBarItem
-//              (
-//              icon: new Icon( Icons.search),
-//              title: new Text("Search"),
-//
-//            ),
-//            BottomNavigationBarItem
-//              (
-//              icon: new Icon( Icons.favorite),
-//              title: new Text("Marked"),
-//
-//            ),
-//            BottomNavigationBarItem
-//              (
-//              icon: new Icon( Icons.check),
-//              title: new Text("Check"),
-//
-//            ),
-//            BottomNavigationBarItem
-//              (
-//              icon: new Icon( Icons.person),
-//              title: new Text("Profile"),
-//
-//            ),
-//      ]
-//      ),
-//
-//    );
-//  }
-//
-//}
-
+}
