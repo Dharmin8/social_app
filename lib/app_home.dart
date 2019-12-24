@@ -48,7 +48,7 @@ int _currentIndex = 0;
           actions: <Widget>[
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.notifications_none),
+              icon: new Icon(Icons.notifications_none),
 
 
             )
