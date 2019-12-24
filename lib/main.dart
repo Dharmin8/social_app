@@ -9,10 +9,14 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       title: "Nature Drive",
       theme: new ThemeData(
+
+        fontFamily: 'Raleway',
         primaryColor: Colors.green,
         accentColor: new Color(0xffffffff),
       ),
-      home: new AppHome(),
+      home:
+      new AppHome(),
+
       debugShowCheckedModeBanner: false,
     );
   }
