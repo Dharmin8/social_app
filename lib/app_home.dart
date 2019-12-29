@@ -4,7 +4,7 @@ import 'package:social_app/view_search.dart';
 import 'package:social_app/view_home.dart';
 import 'package:social_app/view_favorite.dart';
 import 'package:social_app/view_profile.dart';
-
+import 'package:social_app/location_select.dart';
 class AppHome extends StatefulWidget {
   @override
   _AppHomeState createState() => new _AppHomeState();
@@ -34,12 +34,18 @@ void onTabTapped (int index){
     return new Scaffold(
         appBar: new AppBar(
           centerTitle: true,
-          title: new Text("Nature Drive"),
+          title: new Text("What's Happening In",
+          textAlign: TextAlign.center,
+          style: (
+          TextStyle(
+            fontSize: 22,
+          )
+          ),),
           elevation: 0.7,
 
           bottom:
           PreferredSize(
-            preferredSize: Size(50, 80),
+            preferredSize: Size(50, 60),
             child: Container(
               alignment: Alignment.topCenter,
               child: RaisedButton(
@@ -53,13 +59,19 @@ void onTabTapped (int index){
                   ),),
                   elevation: 0,
 
-                  onPressed: () {}),
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder:(context){
+                      return LocationSelect() ;
+                    }));
+                  }),
             ),
           ),
 //
           actions: <Widget>[
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+
+              },
               icon: new Icon(Icons.notifications_none),
             )
           ],
@@ -80,6 +92,7 @@ void onTabTapped (int index){
             BottomNavigationBarItem(
               icon: new Icon(Icons.home),
               title: new Text("Home"),
+
             ),
             BottomNavigationBarItem(
               icon: new Icon(Icons.search),
