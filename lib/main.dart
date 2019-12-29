@@ -7,12 +7,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: "Social-App",
+      title: "Nature Drive",
       theme: new ThemeData(
-        primaryColor: Colors.grey,
+
+        fontFamily: 'Raleway',
+        primaryColor: Colors.green,
         accentColor: new Color(0xffffffff),
       ),
-      home: new AppHome(),
+      home:
+      new AppHome(),
+
       debugShowCheckedModeBanner: false,
     );
   }
