@@ -39,14 +39,20 @@ void onTabTapped (int index){
 
           bottom:
           PreferredSize(
-            preferredSize: Size(50, 150),
+            preferredSize: Size(50, 80),
             child: Container(
-              alignment: Alignment.center,
+              alignment: Alignment.topCenter,
               child: RaisedButton(
                   textColor: Colors.white,
                   color: Colors.green,
-                  child: Text("Mumbai"),
+                  child: Text("Mumbai",
+                  style: TextStyle(
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Raleway'
+                  ),),
                   elevation: 0,
+
                   onPressed: () {}),
             ),
           ),
