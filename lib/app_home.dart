@@ -4,6 +4,7 @@ import 'package:social_app/view_search.dart';
 import 'package:social_app/view_home.dart';
 import 'package:social_app/view_favorite.dart';
 import 'package:social_app/view_profile.dart';
+import 'package:social_app/location_select.dart';
 
 class AppHome extends StatefulWidget {
   @override
@@ -31,23 +32,41 @@ class _AppHomeState extends State<AppHome> with SingleTickerProviderStateMixin {
     return new Scaffold(
       appBar: new AppBar(
         centerTitle: true,
-        title: new Text("Nature Drive"),
+        title: new Text(
+          "What's Happening In",
+          style: (TextStyle(fontSize: 22)),
+        ),
         elevation: 0.7,
         bottom: PreferredSize(
-          preferredSize: Size(50, 150),
+          preferredSize: Size(50, 60),
           child: Container(
             alignment: Alignment.center,
             child: RaisedButton(
                 textColor: Colors.white,
                 color: Colors.green,
-                child: Text("Mumbai"),
+                child: Text(
+                  "Mumbai",
+                  style: TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Raleway'),
+                ),
                 elevation: 0,
                 onPressed: () {}),
           ),
         ),
         actions: <Widget>[
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return LocationSelect();
+                  },
+                ),
+              );
+            },
             icon: new Icon(Icons.notifications_none),
           )
         ],
