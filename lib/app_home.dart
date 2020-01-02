@@ -52,20 +52,22 @@ class _AppHomeState extends State<AppHome> with SingleTickerProviderStateMixin {
                       fontFamily: 'Raleway'),
                 ),
                 elevation: 0,
-                onPressed: () {}),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return LocationSelect();
+                      },
+                    ),
+                  );
+                }),
           ),
         ),
         actions: <Widget>[
           IconButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return LocationSelect();
-                  },
-                ),
-              );
+
             },
             icon: new Icon(Icons.notifications_none),
           )

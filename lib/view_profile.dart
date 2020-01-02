@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class Person extends StatelessWidget {
@@ -26,6 +28,7 @@ class Person extends StatelessWidget {
                     image: DecorationImage(
                       image: AssetImage('media/profile.jpg'),
                       fit: BoxFit.cover,
+
                     ),
                     borderRadius: BorderRadius.all(Radius.circular(75.0)),
                   ),
@@ -46,69 +49,80 @@ class Person extends StatelessWidget {
                   height: 40.0,
                   width: 200.0,
                   child: Material(
+
                     borderRadius: BorderRadius.circular(20.0),
-                    shadowColor: Colors.blueAccent,
+
                     color: Colors.blue,
-                    elevation: 7.0,
+
                     child: GestureDetector(
                       onTap: () {},
                       child: Text(
                         'Your Certificates',
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.white, height: 2.1),
+                      textAlign: TextAlign.center,
+
+
                       ),
+
                     ),
+
                   ),
                 ),
-                SizedBox(height: 15.0),
+                SizedBox(height: 20.0),
                 Container(
                   height: 40.0,
                   width: 200.0,
                   child: Material(
                     borderRadius: BorderRadius.circular(20.0),
-                    shadowColor: Colors.grey,
-                    color: Colors.grey,
-                    elevation: 7.0,
+
+                    color: Colors.deepOrange,
+
                     child: GestureDetector(
                       onTap: () {},
                       child: Text(
                         'Nature Drive Statistics',
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.white, height: 2.1),
+                        textAlign: TextAlign.center,
                       ),
                     ),
                   ),
                 ),
-                SizedBox(height: 15.0),
+                SizedBox(height: 20.0),
                 Container(
                   height: 40.0,
                   width: 200.0,
                   child: Material(
                     borderRadius: BorderRadius.circular(20.0),
-                    shadowColor: Colors.pink,
+
                     color: Colors.pink,
-                    elevation: 7.0,
+
                     child: GestureDetector(
                       onTap: () {},
                       child: Text(
                         'Give Us A Rating',
-                        style: TextStyle(color: Colors.white),
+                        style:
+                        TextStyle(color: Colors.white, height: 2.1),
+                        textAlign: TextAlign.center,
+
                       ),
                     ),
                   ),
                 ),
-                SizedBox(height: 15.0),
+                SizedBox(height: 20.0),
                 Container(
                   height: 40.0,
                   width: 200.0,
                   child: Material(
                     borderRadius: BorderRadius.circular(20.0),
-                    shadowColor: Colors.teal,
+
                     color: Colors.teal,
-                    elevation: 7.0,
+
                     child: GestureDetector(
                       onTap: () {},
                       child: Text(
                         'About Us',
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.white, height: 2.1),
+                        textAlign: TextAlign.center,
                       ),
                     ),
                   ),
