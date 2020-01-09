@@ -6,7 +6,13 @@ class Person extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        body: new Stack(
+        body: SingleChildScrollView(
+          child: Container(
+            height: MediaQuery
+              .of(context)
+              .size
+              .height,
+       child : new Stack(
       children: <Widget>[
         ClipPath(
           child: new Container(
@@ -127,10 +133,29 @@ class Person extends StatelessWidget {
                     ),
                   ),
                 ),
+                SizedBox(height: 20.0),
+                Container(
+                  height: 40.0,
+                  width: 200.0,
+                  child: Material(
+                    borderRadius: BorderRadius.circular(20.0),
+
+                    color: Colors.blueGrey,
+
+                    child: GestureDetector(
+                      onTap: () {},
+                      child: Text(
+                        'Edit Profile',
+                        style: TextStyle(color: Colors.white, height: 2.1),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                ),
               ],
             )),
       ],
-    ));
+  ))));
   }
 }
 
@@ -139,7 +164,7 @@ class getClipper extends CustomClipper<Path> {
   Path getClip(Size size) {
     var path = new Path();
 
-    path.lineTo(0.0, size.height / 1.9);
+    path.lineTo(0.0, size.height / 2);
     path.lineTo(size.width + 125, 0.0);
     path.close();
     return path;
