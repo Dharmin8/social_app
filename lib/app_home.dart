@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:social_app/view_check.dart';
-import 'package:social_app/view_search.dart';
-import 'package:social_app/view_home.dart';
-import 'package:social_app/view_favorite.dart';
-import 'package:social_app/view_profile.dart';
-import 'package:social_app/location_select.dart';
+import 'package:naturedrive/view_check.dart';
+import 'package:naturedrive/view_search.dart';
+import 'package:naturedrive/view_home.dart';
+import 'package:naturedrive/view_favorite.dart';
+import 'package:naturedrive/view_profile.dart';
+import 'package:naturedrive/location_select.dart';
 
 class AppHome extends StatefulWidget {
   @override

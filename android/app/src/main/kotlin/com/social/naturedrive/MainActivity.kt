@@ -1,4 +1,4 @@
-package com.social.naturedrive
+package com.example.social_app
 
 import android.os.Bundle
 
