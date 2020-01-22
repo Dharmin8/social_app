@@ -1,12 +1,21 @@
-import 'package:flutter/material.dart';
+ import 'package:flutter/material.dart';
 import 'package:naturedrive/view_check.dart';
 import 'package:naturedrive/view_search.dart';
 import 'package:naturedrive/view_home.dart';
 import 'package:naturedrive/view_favorite.dart';
 import 'package:naturedrive/view_profile.dart';
 import 'package:naturedrive/location_select.dart';
-
+import 'authentication.dart';
 class AppHome extends StatefulWidget {
+
+  AppHome({
+    this.auth,
+    this.onSignedOut,
+
+});
+
+  final AuthImplementation auth;
+  final VoidCallback onSignedOut;
   @override
   _AppHomeState createState() => new _AppHomeState();
 }
