@@ -4,6 +4,7 @@ import 'package:social_app/view_search.dart';
 import 'package:social_app/view_home.dart';
 import 'package:social_app/view_favorite.dart';
 import 'package:social_app/view_profile.dart';
+import 'package:social_app/login_page.dart';
 
 class AppHome extends StatefulWidget {
   @override
@@ -85,6 +86,19 @@ class _AppHomeState extends State<AppHome> with SingleTickerProviderStateMixin {
           new Check(),
           new Person(),
         ],
+      ),
+      floatingActionButton: new FloatingActionButton.extended(
+        backgroundColor: Colors.cyan,
+        icon: Icon(Icons.add),
+        label: Text('Register'),
+        onPressed: () {
+          Navigator.push(
+            context,
+            new MaterialPageRoute(
+              builder: (BuildContext context) => new Login(),
+            ),
+          );
+        },
       ),
     );
   }
