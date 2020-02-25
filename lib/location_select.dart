@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:naturedrive/model/drive_locations.dart';
-import 'package:naturedrive/app_home.dart';
 
 class LocationSelect extends StatelessWidget {
   final Icon cusIcon = Icon(Icons.search);
