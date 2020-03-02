@@ -47,6 +47,13 @@ class _AppHomeState extends State<AppHome> with SingleTickerProviderStateMixin {
             ),
           ],
         ),
+        actions: <Widget>[
+          new Icon(Icons.search),
+          new Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5.0),
+          ),
+          new Icon(Icons.notifications),
+        ],
       ),
       drawer: new Drawer(
         child: ListView(
