@@ -20,6 +20,7 @@ dependencies:
   flutter:
     sdk: flutter
   firebase_core: ^0.4.4
+  firebase_messaging: ^6.0.12
 
 
 
