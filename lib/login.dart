@@ -1,6 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:naturedrive/authentication.dart';
+import 'authentication.dart';
+import 'login_home.dart';
 
 class LoginPage extends StatefulWidget {
+  LoginPage({
+    this.auth,
+    this.onSignedIn,
+    onSignedOut,
+  });
+
+  final AuthImplementation auth;
+  final VoidCallback onSignedIn;
+
   @override
   _LoginPageState createState() => _LoginPageState();
 }
@@ -19,16 +31,31 @@ class _LoginPageState extends State<LoginPage> {
   bool validateAndSave() {
     final form = formKey.currentState;
 
-    if(form.validate())
-    {
+    if (form.validate()) {
       form.save();
       return true;
-    }
-    else
-    {
-      return false; 
+    } else {
+      return false;
     }
   }
+
+  void validateAndSubmit() async {
+    if (validateAndSave()) {
+      try {
+        if (_formType == FormType.login) {
+          String userId = await widget.auth.SignIn(_email, _password);
+          print("login userId = " + userId);
+        } else {
+          String userId = await widget.auth.SignUp(_email, _password);
+          print("Register userId = " + userId);
+        }
+        widget.onSignedIn();
+      } catch (e) {
+        print("Error = " + e.toString());
+      }
+    }
+  }
+
   void moveToRegister() {
     formKey.currentState.reset();
     setState(() {
@@ -115,7 +142,9 @@ class _LoginPageState extends State<LoginPage> {
         new RaisedButton(
           child: new Text("Login", style: new TextStyle(fontSize: 20.0)),
           onPressed: () {
-            validateAndSave();
+            validateAndSubmit();
+            Navigator.push(context,
+                MaterialPageRoute(builder: (BuildContext context) => Home()));
           },
         ),
         SizedBox(
@@ -132,9 +161,10 @@ class _LoginPageState extends State<LoginPage> {
     } else {
       return [
         new RaisedButton(
-          child: new Text("Create Account", style: new TextStyle(fontSize: 20.0)),
+          child:
+              new Text("Create Account", style: new TextStyle(fontSize: 20.0)),
           onPressed: () {
-            validateAndSave();
+            validateAndSubmit();
           },
         ),
         SizedBox(
