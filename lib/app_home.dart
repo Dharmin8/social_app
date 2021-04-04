@@ -1,4 +1,5 @@
- import 'package:flutter/material.dart';
+
+import 'package:flutter/material.dart';
 import 'package:naturedrive/view_check.dart';
 import 'package:naturedrive/view_search.dart';
 import 'package:naturedrive/view_home.dart';
@@ -77,7 +78,6 @@ class _AppHomeState extends State<AppHome> with SingleTickerProviderStateMixin {
 
           IconButton(
             onPressed: () {
-
             },
             icon: new Icon(Icons.notifications_none),
           )
