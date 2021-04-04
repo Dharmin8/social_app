@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>275458521870-bn3f0l8bh3udn3mcrdc5kkbel599s73q.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.275458521870-bn3f0l8bh3udn3mcrdc5kkbel599s73q</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>275458521870-d91eauhb2ma1mki7jkf9k9796rm4oc09.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAwU7MVj5m3Aj542RTvn_S2dUekZacYCB8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>275458521870</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.social.naturedrive</string>
+	<key>PROJECT_ID</key>
+	<string>nature-drive</string>
+	<key>STORAGE_BUCKET</key>
+	<string>nature-drive.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:275458521870:ios:8a2b7d7efaf3c3d2d7755f</string>
+	<key>DATABASE_URL</key>
+	<string>https://nature-drive.firebaseio.com</string>
+</dict>
+</plist>

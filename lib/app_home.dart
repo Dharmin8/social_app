@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:social_app/view_check.dart';
-import 'package:social_app/view_search.dart';
-import 'package:social_app/view_home.dart';
-import 'package:social_app/view_favorite.dart';
-import 'package:social_app/view_profile.dart';
-import 'package:social_app/login_page.dart';
+import 'package:naturedrive/view_check.dart';
+import 'package:naturedrive/view_search.dart';
+import 'package:naturedrive/view_home.dart';
+import 'package:naturedrive/view_favorite.dart';
+import 'package:naturedrive/view_profile.dart';
+import 'package:naturedrive/location_select.dart';
 
 class AppHome extends StatefulWidget {
   @override
@@ -12,47 +12,95 @@ class AppHome extends StatefulWidget {
 }
 
 class _AppHomeState extends State<AppHome> with SingleTickerProviderStateMixin {
-  TabController _tabController;
-  @override
-  void initState() {
-    super.initState();
-    _tabController = new TabController(length: 5, initialIndex: 0, vsync: this);
+  int _currentIndex = 0;
+  void onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
   }
+
+  final List<Widget> tabs = [
+    new Home(),
+    new Search(),
+    new Favorite(),
+    new Check(),
+    new Person(),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
         centerTitle: true,
-        title: new Text("Welcome To *"),
+        title: new Text(
+          "What's Happening In",
+          style: (TextStyle(fontSize: 22)),
+        ),
         elevation: 0.7,
-        bottom: new TabBar(
-          controller: _tabController,
-          indicatorColor: Colors.white,
-          tabs: <Widget>[
-            new Tab(
-              icon: Icon(Icons.home),
-            ),
-            new Tab(
-              icon: Icon(Icons.search),
-            ),
-            new Tab(
-              icon: Icon(Icons.favorite),
-            ),
-            new Tab(
-              icon: Icon(Icons.check),
-            ),
-            new Tab(
-              icon: Icon(Icons.person),
-            ),
-          ],
+        bottom: PreferredSize(
+          preferredSize: Size(50, 60),
+          child: Container(
+            alignment: Alignment.center,
+            child: RaisedButton(
+                textColor: Colors.white,
+                color: Colors.green,
+                child: Text(
+                  "Mumbai",
+                  style: TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Raleway'),
+                ),
+                elevation: 0,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return LocationSelect();
+                      },
+                    ),
+                  );
+                }),
+          ),
         ),
         actions: <Widget>[
-          new Icon(Icons.search),
-          new Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5.0),
+
+          IconButton(
+            onPressed: () {
+
+            },
+            icon: new Icon(Icons.notifications_none),
+          )
+        ],
+      ),
+      body: tabs[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: onTabTapped,
+        currentIndex: _currentIndex,
+        type: BottomNavigationBarType.fixed,
+        iconSize: 25,
+        items: [
+          BottomNavigationBarItem(
+            icon: new Icon(Icons.home),
+            title: new Text("Home"),
           ),
-          new Icon(Icons.notifications),
+          BottomNavigationBarItem(
+            icon: new Icon(Icons.search),
+            title: new Text("Search"),
+          ),
+          BottomNavigationBarItem(
+            icon: new Icon(Icons.favorite),
+            title: new Text("Marked"),
+          ),
+          BottomNavigationBarItem(
+            icon: new Icon(Icons.check),
+            title: new Text("Attended"),
+          ),
+          BottomNavigationBarItem(
+            icon: new Icon(Icons.person),
+            title: new Text("Profile"),
+          ),
         ],
       ),
       drawer: new Drawer(
@@ -70,9 +118,7 @@ class _AppHomeState extends State<AppHome> with SingleTickerProviderStateMixin {
             ),
             new ListTile(
               title: new Text('Theme'),
-            ),
-            new ListTile(
-              title: new Text('Notifications'),
+              onTap: (null),
             ),
             new ListTile(
               title: new Text('Contact Us'),
