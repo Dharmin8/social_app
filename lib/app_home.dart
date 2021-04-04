@@ -65,6 +65,7 @@ class _AppHomeState extends State<AppHome> with SingleTickerProviderStateMixin {
           ),
         ),
         actions: <Widget>[
+
           IconButton(
             onPressed: () {
 
@@ -129,6 +130,29 @@ class _AppHomeState extends State<AppHome> with SingleTickerProviderStateMixin {
         ),
       ),
       backgroundColor: new Color(0xffffffff),
+      body: new TabBarView(
+        controller: _tabController,
+        children: <Widget>[
+          new Home(),
+          new Search(),
+          new Favorite(),
+          new Check(),
+          new Person(),
+        ],
+      ),
+      floatingActionButton: new FloatingActionButton.extended(
+        backgroundColor: Colors.cyan,
+        icon: Icon(Icons.add),
+        label: Text('Register'),
+        onPressed: () {
+          Navigator.push(
+            context,
+            new MaterialPageRoute(
+              builder: (BuildContext context) => new Login(),
+            ),
+          );
+        },
+      ),
     );
   }
 }
