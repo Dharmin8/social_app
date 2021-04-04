@@ -8,28 +8,28 @@ class HomeModel {
 
 List<HomeModel> homeData = [
   new HomeModel(
-    name: "Clean Up : Juhu Beach",
+    name: "Clean Up : Chowpatty",
     desc: "Dec 11",
-    avatarUrl: 'media/beach.jpg',
+    avatarUrl: 'media/Chowpatty.jpg',
+  ),
+  new HomeModel(
+    name: "Tree Plantation : Aarey",
+    desc: "Dec 15",
+    avatarUrl: 'media/Aarey.jpg',
   ),
   new HomeModel(
     name: "Clean Up : Juhu Beach",
-    desc: "Dec 11",
+    desc: "Dec 22",
+    avatarUrl: 'media/Juhu.jpg',
+  ),
+  new HomeModel(
+    name: "Clean Up : Versova Beach",
+    desc: "Dec 31",
     avatarUrl: 'media/beach.jpg',
   ),
   new HomeModel(
-    name: "Clean Up : Juhu Beach",
-    desc: "Dec 11",
-    avatarUrl: 'media/beach.jpg',
-  ),
-  new HomeModel(
-    name: "Clean Up : Juhu Beach",
-    desc: "Dec 11",
-    avatarUrl: 'media/beach.jpg',
-  ),
-  new HomeModel(
-    name: "Clean Up : Juhu Beach",
-    desc: "Dec 11",
-    avatarUrl: 'media/beach.jpg',
+    name: "Tree Plantation : SGNP",
+    desc: "Jan 1",
+    avatarUrl: 'media/Aarey.jpg',
   ),
 ];

@@ -1,4 +1,4 @@
-name: social_app
+name: naturedrive
 description: A new Flutter project.
 
 # The following defines the version and build number for your application.
@@ -19,10 +19,19 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  firebase_auth: ^0.15.4
+  firebase_messaging: ^6.0.9
+  google_maps_flutter: ^0.5.24+1
+  font_awesome_flutter: ^8.7.0
+
+
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  firebase_auth:
+  
+  
 
 dev_dependencies:
   flutter_test:
@@ -51,6 +60,10 @@ flutter:
   assets:
     - media/beach.jpg
     - media/profile.jpg
+    - media/Juhu.jpg
+    - media/Jeltz.jpg
+    - media/Aarey.jpg
+    - images/BootIcon.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

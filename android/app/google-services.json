@@ -1,0 +1,52 @@
+{
+  "project_info": {
+
+    "project_number": "275458521870",
+    "firebase_url": "https://nature-drive.firebaseio.com",
+    "project_id": "nature-drive",
+    "storage_bucket": "nature-drive.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+
+        "mobilesdk_app_id": "1:275458521870:android:d4213a4a983f596ed7755f",
+        "android_client_info": {
+          "package_name": "com.social.naturedrive"
+
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "275458521870-d91eauhb2ma1mki7jkf9k9796rm4oc09.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.social.naturedrive",
+            "certificate_hash": "dc4efcff4b778647bdc17be9331c4f9dbcd78582"
+          }
+        },
+        {
+          "client_id": "275458521870-s04bnnpclemgjccbq78i896gusrqm1v5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+
+          "current_key": "AIzaSyADyhVtkDWd5bzhiQQ5x6iz1hesbTXECqw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "275458521870-s04bnnpclemgjccbq78i896gusrqm1v5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

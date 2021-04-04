@@ -1,11 +1,21 @@
-import 'package:flutter/material.dart';
-import 'package:social_app/view_check.dart';
-import 'package:social_app/view_search.dart';
-import 'package:social_app/view_home.dart';
-import 'package:social_app/view_favorite.dart';
-import 'package:social_app/view_profile.dart';
-
+ import 'package:flutter/material.dart';
+import 'package:naturedrive/view_check.dart';
+import 'package:naturedrive/view_search.dart';
+import 'package:naturedrive/view_home.dart';
+import 'package:naturedrive/view_favorite.dart';
+import 'package:naturedrive/view_profile.dart';
+import 'package:naturedrive/location_select.dart';
+import 'authentication.dart';
 class AppHome extends StatefulWidget {
+
+  AppHome({
+    this.auth,
+    this.onSignedOut,
+
+});
+
+  final AuthImplementation auth;
+  final VoidCallback onSignedOut;
   @override
   _AppHomeState createState() => new _AppHomeState();
 }
@@ -31,23 +41,44 @@ class _AppHomeState extends State<AppHome> with SingleTickerProviderStateMixin {
     return new Scaffold(
       appBar: new AppBar(
         centerTitle: true,
-        title: new Text("Nature Drive"),
+        title: new Text(
+          "What's Happening In",
+          style: (TextStyle(fontSize: 22)),
+        ),
         elevation: 0.7,
         bottom: PreferredSize(
-          preferredSize: Size(50, 150),
+          preferredSize: Size(50, 60),
           child: Container(
             alignment: Alignment.center,
             child: RaisedButton(
                 textColor: Colors.white,
                 color: Colors.green,
-                child: Text("Mumbai"),
+                child: Text(
+                  "Mumbai",
+                  style: TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Raleway'),
+                ),
                 elevation: 0,
-                onPressed: () {}),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return LocationSelect();
+                      },
+                    ),
+                  );
+                }),
           ),
         ),
         actions: <Widget>[
+
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+
+            },
             icon: new Icon(Icons.notifications_none),
           )
         ],
@@ -108,6 +139,29 @@ class _AppHomeState extends State<AppHome> with SingleTickerProviderStateMixin {
         ),
       ),
       backgroundColor: new Color(0xffffffff),
+      body: new TabBarView(
+        controller: _tabController,
+        children: <Widget>[
+          new Home(),
+          new Search(),
+          new Favorite(),
+          new Check(),
+          new Person(),
+        ],
+      ),
+      floatingActionButton: new FloatingActionButton.extended(
+        backgroundColor: Colors.cyan,
+        icon: Icon(Icons.add),
+        label: Text('Register'),
+        onPressed: () {
+          Navigator.push(
+            context,
+            new MaterialPageRoute(
+              builder: (BuildContext context) => new Login(),
+            ),
+          );
+        },
+      ),
     );
   }
 }
