@@ -19,8 +19,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  firebase_core: ^0.4.4
-  firebase_messaging: ^6.0.12
+  firebase_auth: ^0.15.4
+  firebase_messaging: ^6.0.9
+  google_maps_flutter: ^0.5.24+1
+  font_awesome_flutter: ^8.7.0
 
 
 

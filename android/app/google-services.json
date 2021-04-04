@@ -1,5 +1,6 @@
 {
   "project_info": {
+
     "project_number": "275458521870",
     "firebase_url": "https://nature-drive.firebaseio.com",
     "project_id": "nature-drive",
@@ -8,9 +9,11 @@
   "client": [
     {
       "client_info": {
+
         "mobilesdk_app_id": "1:275458521870:android:d4213a4a983f596ed7755f",
         "android_client_info": {
           "package_name": "com.social.naturedrive"
+
         }
       },
       "oauth_client": [
@@ -29,6 +32,7 @@
       ],
       "api_key": [
         {
+
           "current_key": "AIzaSyADyhVtkDWd5bzhiQQ5x6iz1hesbTXECqw"
         }
       ],
