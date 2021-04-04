@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:social_app/app_home.dart';
-
+import 'package:naturedrive/app_home.dart';
+import 'package:naturedrive/login.dart';
+import 'package:naturedrive/mapping.dart';
+import 'authentication.dart';
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
@@ -15,7 +17,9 @@ class MyApp extends StatelessWidget {
         accentColor: new Color(0xffffffff),
       ),
       home:
-      new AppHome(),
+      new MappingPage(auth: Auth(),),
+      
+
 
       debugShowCheckedModeBanner: false,
     );

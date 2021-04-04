@@ -1,10 +1,10 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:social_app/model/drive_locations.dart';
+import 'package:naturedrive/model/drive_locations.dart';
 
 class LocationSelect extends StatelessWidget {
-  Icon cusIcon = Icon(Icons.search);
+  final Icon cusIcon = Icon(Icons.search);
   Widget cusSearchBar = Text("Select Your Location");
   @override
   Widget build(BuildContext context) {

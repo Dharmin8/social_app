@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:social_app/model/home_model.dart';
+import 'package:naturedrive/model/home_model.dart';
 
 class Favorite extends StatefulWidget {
   @override

@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.social_app">
+    package="com.social.naturedrive">
 
     <!-- io.flutter.app.FlutterApplication is an android.app.Application that
          calls FlutterMain.startInitialization(this); in its onCreate method.
@@ -10,6 +10,8 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="Nature Drive"
         android:icon="@mipmap/ic_launcher">
+        
+        <!-- tools:replace="android:appComponentFactory" -->
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
